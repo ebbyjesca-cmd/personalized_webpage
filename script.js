@@ -11,5 +11,21 @@ window.onload = function () {
    if (name && age) {
     displayData(name, age);
   }
-}
+};
 
+
+function displayData(name, age){
+    console.log('hello ${name}, age ${age}')
+};
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const age = document.getElementById("age").value;
+
+  localStorage.setItem("name", name);
+  localStorage.setItem("age", age);
+
+  displayData(name, age);
+});
