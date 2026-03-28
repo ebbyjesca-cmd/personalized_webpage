@@ -14,7 +14,7 @@ window.onload = function () {
 };
 
 
-function displayData(Name, age){
+  function displayData(Name, age){
     greeting.innerText = `hello, ${Name}`;
 };
 
@@ -22,7 +22,7 @@ form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const Name = document.getElementById("Name").value;
-  const age = document.getElementById("age").value;
+  const age = (document.getElementById("age").value);
 
   localStorage.setItem("Name", Name);
   localStorage.setItem("age", age);
@@ -31,10 +31,8 @@ form.addEventListener("submit", function (e) {
   ageInMonths.innerText = `You are ${months} months old.`;
 
   function calculateMonths(age) {
-  return age * 12;
 }
   displayData(Name, age);
-});
 
 if (age >=18) {
     adultContent.innerText = "you can access adult content"
@@ -42,13 +40,12 @@ if (age >=18) {
     adultContent.innerText = "you are still young"
 }
 
+});
+
 quotesDiv.innerHTML = "";
   for (let i = 0; i < 5; i++) {
     const quote = document.createElement("p");
     quote.innerText = " Believe you can and you're halfway there. It always seems impossible until it's done!";
     quotesDiv.appendChild(quote);
   }
-
-
-
 
