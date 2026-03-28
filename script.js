@@ -42,5 +42,13 @@ if (age >=18) {
     adultContent.innerText = "you are still young"
 }
 
+quotesDiv.innerHTML = "";
+  for (let i = 0; i < 5; i++) {
+    const quote = document.createElement("p");
+    quote.innerText = " Believe you can and you're halfway there. It always seems impossible until it's done!";
+    quotesDiv.appendChild(quote);
+  }
+
+
 
 
