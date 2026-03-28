@@ -1,7 +1,7 @@
 const form = document.getElementById("usrform");
 const greeting = document.getElementById("greetings");
-const ageMonths = document.getElementById("ageInMonths");
-const adultMessage = document.getElementById("adultContent");
+const ageInMonths = document.getElementById("ageInMonths");
+const adultContent = document.getElementById("adultContent");
 const quotesDiv = document.getElementById("quotes");
 
 window.onload = function () {
@@ -36,6 +36,11 @@ form.addEventListener("submit", function (e) {
   displayData(Name, age);
 });
 
+if (age >=18) {
+    adultContent.innerText = "you can access adult content"
+}else  {
+    adultContent.innerText = "you are still young"
+}
 
 
 
