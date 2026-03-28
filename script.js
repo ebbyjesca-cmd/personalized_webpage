@@ -5,27 +5,37 @@ const adultMessage = document.getElementById("adultContent");
 const quotesDiv = document.getElementById("quotes");
 
 window.onload = function () {
-  const name = localStorage.getItem("name");
+  const Name = localStorage.getItem("Name");
   const age = localStorage.getItem("age");
 
-   if (name && age) {
-    displayData(name, age);
+   if (Name && age) {
+    displayData(Name, age);
   }
 };
 
 
-function displayData(name, age){
-    console.log('hello ${name}, age ${age}')
+function displayData(Name, age){
+    greeting.innerText = `hello, ${Name}`;
 };
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const name = document.getElementById("name").value;
+  const Name = document.getElementById("Name").value;
   const age = document.getElementById("age").value;
 
-  localStorage.setItem("name", name);
+  localStorage.setItem("Name", Name);
   localStorage.setItem("age", age);
 
-  displayData(name, age);
+  const months = calculateMonths(age);
+  ageInMonths.innerText = `You are ${months} months old.`;
+
+  function calculateMonths(age) {
+  return age * 12;
+}
+  displayData(Name, age);
 });
+
+
+
+
